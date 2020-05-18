@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Omikuji</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <section class="wrapper">
+      <h1>おみくじ</h1>
+      <div id="omikuji-app">
+        <button class="button-play" v-on:click="draw">{{ button }}</button>
+        <div class="">
+          <p v-if="result">結果は「{{ result }}」でした。</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <script>
+      let omikuji = [ "大吉", "中吉", "将吉", "吉", "凶", "大凶" ];
+      let app = new Vue({
+        el: "#omikuji-app",
+        data: {
+          result: null,
+          button: "おみくじを引く"
+        },
+        methods: {
+          draw() {
+            let index = Math.floor(Math.random() * omikuji.length);
+            this.result = omikuji[index];
+            this.button = "もう一度引く"
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
