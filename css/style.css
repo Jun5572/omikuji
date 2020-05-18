@@ -20,7 +20,7 @@ button{
   border-radius: 5px;
 }
 button:hover{
-  opacity: 0.8;
+  cursor: pointer;
 }
 .button-play{
   font-size: 1em;
@@ -33,7 +33,7 @@ button:hover{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 80%;
+  width: 100vw;
   min-height: 100vh;
   background-color: #efefef;
   margin: auto;
